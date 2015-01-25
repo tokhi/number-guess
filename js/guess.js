@@ -22,6 +22,7 @@ angular.module('numGuess', []).constant()
 
 			if($scope.number == rNum) {
 				$scope.gameOn = false;
+				Example1.Timer.toggle();
 				return "Good Job, You are right!";
 			}
 			else {
@@ -40,6 +41,8 @@ angular.module('numGuess', []).constant()
 			$scope.number = '';
 			rNum = $scope.getRandomNumber();
 			$scope.gameOn = true;
+			Example1.resetStopwatch();
+			Example1.Timer.toggle();
 		}
 
 		$scope.tries = function () {
